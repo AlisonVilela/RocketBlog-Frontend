@@ -1,0 +1,13 @@
+html {
+  @include box-sizing(border-box);
+}
+
+* {
+
+    &,
+    &:before,
+    &:after {
+      @include box-sizing(inherit);
+        }
+
+}

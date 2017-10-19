@@ -1,0 +1,17 @@
+@mixin font-size($font-size, $line-height: auto) {
+    font-size: $font-size * 1rem;
+
+    @if $line-height == auto {
+        line-height: ceil($font-size / 1.5rem) * (1.5rem / $font-size);
+    }
+    @else {
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        }
+        @elseif ($line-height != none and $line-height != false) {
+            @warn "Warnning: ‘#{$line-height}’ is not a valid value for `line-height`."
+        }
+
+    }
+
+}
