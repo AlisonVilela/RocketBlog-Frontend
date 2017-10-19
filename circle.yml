@@ -15,10 +15,11 @@ test:
 build:
   post:
     - ./node_modules/@angular/cli/bin/ng build --progress=false    
-    - cd ./dist
 ##deployment
 deployment:
   production:
     branch: master
-    heroku:      
-      appname: blog-rocket
+    commands:      
+      - git subtree push --prefix dist git@heroku.com:blog-rocket.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app blog-rocket
+
