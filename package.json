@@ -12,8 +12,11 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.0.0",
     "@angular/cli": "1.2.6",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/language-service": "^4.0.0",
+    "typescript": "~2.3.3",
+    "@angular/animations": "^4.0.0",    
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
@@ -27,9 +30,7 @@
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
-  "devDependencies": {
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/language-service": "^4.0.0",
+  "devDependencies": {    
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
@@ -47,7 +48,6 @@
     "phantomjs-prebuilt": "2.1.15",
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "tslint": "~5.3.2"    
   }
 }
