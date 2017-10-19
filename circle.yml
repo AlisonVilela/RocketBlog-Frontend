@@ -12,14 +12,12 @@ test:
   override:
     - ./node_modules/@angular/cli/bin/ng lint --type-check
     - ./node_modules/@angular/cli/bin/ng test --watch=false --progress=false
-build:
-  post:
-    - ./node_modules/@angular/cli/bin/ng build --progress=false    
 ##deployment
 deployment:
   production:
     branch: master
-    commands:      
+    commands:
+      - ./node_modules/@angular/cli/bin/ng build --prod --progress=false
       - git subtree push --prefix dist git@heroku.com:blog-rocket.git $CIRCLE_SHA1:master
       - heroku run rake db:migrate --app blog-rocket
 
