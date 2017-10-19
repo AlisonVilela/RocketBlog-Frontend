@@ -1,7 +1,7 @@
 
 # BlogRocket
 
-See [BlogRocket](https://www.heroku.com/)
+See [BlogRocket](https://blog-rocket.herokuapp.com/)
 
 ## Angular CLI
 
