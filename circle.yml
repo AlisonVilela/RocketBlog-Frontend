@@ -18,6 +18,6 @@ deployment:
     branch: master
     commands:
       - ./node_modules/@angular/cli/bin/ng build -e prod -prod --aot --progress=false
-      - git subtree push --prefix dist git@heroku.com:blog-rocket.git $CIRCLE_SHA1:master
+      - git subtree push --prefix dist git@heroku.com:blog-rocket.git $CIRCLE_SHA1:refs/heads/master
       - heroku run rake db:migrate --app blog-rocket
 
