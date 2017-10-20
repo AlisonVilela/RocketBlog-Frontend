@@ -11,7 +11,7 @@ dependencies:
 test:
   override:
     - ./node_modules/@angular/cli/bin/ng lint --type-check
-    - ./node_modules/@angular/cli/bin/ng test --watch=false --progress=false
+    ##- ./node_modules/@angular/cli/bin/ng test --watch=false --progress=false
 ##deployment
 deployment:
   production:
