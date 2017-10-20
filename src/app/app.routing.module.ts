@@ -4,9 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import * as Pages from 'app/pages'
 
 const appRoutes: Routes = [
-  { path: '', children: [
-    { path: 'blog', component: Pages.InitialPageComponent },
-    { path: '**', redirectTo: 'blog', pathMatch: 'full' }
+  {
+    path: '', children: [
+      { path: 'blog', component: Pages.InitialPageComponent },
+      { path: '**', redirectTo: 'blog', pathMatch: 'full' }
     ]
   }
 ]
