@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  ApiURL: 'https://tranquil-sands-15095.herokuapp.com'
+  ApiURL: 'https://blog-rocket-api.herokuapp.com'
 };
