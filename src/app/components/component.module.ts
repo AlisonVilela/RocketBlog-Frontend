@@ -9,10 +9,10 @@ import * as Components from 'app/components'
   imports: [
     CoreModule
   ],
-  declarations: [    
+  declarations: [
     Components.AlertMessageComponent,
     Components.FooterComponent,
-    Components.HeaderComponent,    
+    Components.HeaderComponent,
     Components.NavBarComponent,
     Components.PageContentComponent,
     Components.WidgetComponent
@@ -20,7 +20,7 @@ import * as Components from 'app/components'
   exports: [
     Components.AlertMessageComponent,
     Components.FooterComponent,
-    Components.HeaderComponent,    
+    Components.HeaderComponent,
     Components.NavBarComponent,
     Components.PageContentComponent,
     Components.WidgetComponent

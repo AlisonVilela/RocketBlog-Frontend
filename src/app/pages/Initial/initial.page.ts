@@ -11,7 +11,7 @@ import { IPostTeste } from 'app/models'
 export class InitialPageComponent implements OnInit {
   title = 'Blog-Rocket!';
   posts: any = []
-  postagem: IPostTeste = {title: '',text: ''}
+  postagem: IPostTeste = {title: '', text: ''}
 
   constructor(private testService: TestService, private alertMessage: AlertMessage) {
 
@@ -31,7 +31,7 @@ export class InitialPageComponent implements OnInit {
   post(input) {
     this.testService.post(input).subscribe(
       data => {
-        this.postagem = {title: '',text: ''}
+        this.postagem = {title: '', text: ''}
         this.posts.push(data)
       },
       error => {
