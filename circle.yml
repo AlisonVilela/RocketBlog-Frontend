@@ -17,4 +17,4 @@ deployment:
   production:
     branch: master
     heroku:
-      appname: blog-rocket
+      appname: rocket-blog

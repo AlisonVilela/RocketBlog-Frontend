@@ -9,13 +9,21 @@ import * as Components from 'app/components'
   imports: [
     CoreModule
   ],
-  declarations: [
+  declarations: [    
+    Components.AlertMessageComponent,
+    Components.FooterComponent,
+    Components.HeaderComponent,    
     Components.NavBarComponent,
-    Components.AlertMessageComponent
+    Components.PageContentComponent,
+    Components.WidgetComponent
   ],
   exports: [
+    Components.AlertMessageComponent,
+    Components.FooterComponent,
+    Components.HeaderComponent,    
     Components.NavBarComponent,
-    Components.AlertMessageComponent
+    Components.PageContentComponent,
+    Components.WidgetComponent
   ]
 })
 export class ComponentModule {}
