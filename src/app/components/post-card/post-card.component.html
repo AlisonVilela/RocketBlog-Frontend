@@ -1,0 +1,11 @@
+<div class="card mb-4">
+  <img class="card-img-top" [src]="'data:image/jpg;base64,'+post.img">
+  <div class="card-body">
+    <h2 class="card-title">{{ post.title }}</h2>
+    <div class="card-text" [innerHTML]="post.contentAbstract"></div>
+    <a [routerLink]="['/blog', 'post', post.titleUrl ]" class="btn btn-primary">Read More &rarr;</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on {{ post.date }} by {{ post.createBy }}
+  </div>
+</div>

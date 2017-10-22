@@ -9,7 +9,10 @@ const appRoutes: Routes = [
     path: '', children: [
       {
         path: 'blog', component: MainComponent, children: [
-          { path: '', component: Pages.InitialPageComponent },
+          { path: '', component: Pages.PostsPageComponent },
+          { path: 'post/:post', component: Pages.PostPageComponent },
+          { path: 'about', component: Pages.AboutPageComponent },
+          { path: 'contact', component: Pages.ContactPageComponent },
         ]
       },
       {

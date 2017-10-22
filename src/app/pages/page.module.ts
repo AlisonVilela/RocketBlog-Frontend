@@ -12,7 +12,17 @@ import * as Pages from 'app/pages'
     RouterModule,
     ComponentModule
   ],
-  declarations: [ Pages.InitialPageComponent ],
-  exports: [ Pages.InitialPageComponent ]
+  declarations: [ 
+    Pages.PostsPageComponent,
+    Pages.PostPageComponent,
+    Pages.AboutPageComponent,
+    Pages.ContactPageComponent
+   ],
+  exports: [ 
+    Pages.PostsPageComponent,
+    Pages.PostPageComponent,
+    Pages.AboutPageComponent,
+    Pages.ContactPageComponent
+   ]
 })
 export class PageModule { }

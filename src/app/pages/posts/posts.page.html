@@ -1,0 +1,12 @@
+<div *ngFor="let post of posts">
+  <app-post-card [post]="post"></app-post-card>
+</div>
+<!-- Pagination -->
+<ul class="pagination justify-content-center mb-4">
+  <li class="page-item" [ngClass]="{'disabled': true}">
+    <a class="page-link" (click)="older()">&larr; Older</a>
+  </li>
+  <li class="page-item" [ngClass]="{'disabled': true}">
+    <a class="page-link" (click)="newer()">Newer &rarr;</a>
+  </li>
+</ul>

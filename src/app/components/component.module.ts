@@ -7,23 +7,26 @@ import * as Components from 'app/components'
 
 @NgModule({
   imports: [
-    CoreModule
+    CoreModule,
+    RouterModule
   ],
   declarations: [
     Components.AlertMessageComponent,
     Components.FooterComponent,
     Components.HeaderComponent,
     Components.NavBarComponent,
-    Components.PageContentComponent,
-    Components.WidgetComponent
+    Components.WidgetComponent,
+    Components.WidgetCardComponent,
+    Components.PostCardComponent
   ],
   exports: [
     Components.AlertMessageComponent,
     Components.FooterComponent,
     Components.HeaderComponent,
     Components.NavBarComponent,
-    Components.PageContentComponent,
-    Components.WidgetComponent
+    Components.WidgetComponent,
+    Components.WidgetCardComponent,
+    Components.PostCardComponent
   ]
 })
 export class ComponentModule {}
