@@ -10,14 +10,14 @@ export class AuthPageComponent {
   public PasswordFocus: boolean
 
   constructor() {
-    
+
   }
 
-  setEmailFocus(focus){
+  setEmailFocus(focus) {
     this.EmailFocus = focus
   }
 
-  setPasswordFocus(focus){
+  setPasswordFocus(focus) {
     this.PasswordFocus = focus
   }
 }

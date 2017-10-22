@@ -15,7 +15,7 @@ import { AppRoutingModule } from 'app/app.routing.module'
   imports: [
     CoreModule,
     BrowserModule,
-    ComponentModule,    
+    ComponentModule,
     ServiceModule.forRoot(),
     AppRoutingModule
   ],

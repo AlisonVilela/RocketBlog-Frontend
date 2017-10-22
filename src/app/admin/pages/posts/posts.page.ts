@@ -18,10 +18,10 @@ export class PostsPageComponent {
   }
 
   edit() {
-    
+
   }
 
   delete() {
-    
+
   }
 }
