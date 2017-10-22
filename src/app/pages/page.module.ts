@@ -12,13 +12,13 @@ import * as Pages from 'app/pages'
     RouterModule,
     ComponentModule
   ],
-  declarations: [ 
+  declarations: [
     Pages.PostsPageComponent,
     Pages.PostPageComponent,
     Pages.AboutPageComponent,
     Pages.ContactPageComponent
    ],
-  exports: [ 
+  exports: [
     Pages.PostsPageComponent,
     Pages.PostPageComponent,
     Pages.AboutPageComponent,

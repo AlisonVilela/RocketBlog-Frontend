@@ -8,8 +8,7 @@ export class WidgetCardComponent {
   @Input() title: string
 
   constructor() {
-    
+
   }
-  
 
 }

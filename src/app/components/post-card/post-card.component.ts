@@ -5,11 +5,10 @@ import { Component, Input } from '@angular/core';
   templateUrl: './post-card.component.html'
 })
 export class PostCardComponent {
-  @Input() post: string
+  @Input() post: any
 
   constructor() {
-    
+
   }
-  
 
 }
