@@ -7,6 +7,11 @@ body {
     color: $gray-7b;
 }
 
-.page {
+.pageBlog {
     padding-top: 50px;
+}
+
+.actions-right {
+    position: absolute;
+    right: 20px;
 }

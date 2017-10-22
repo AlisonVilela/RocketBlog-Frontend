@@ -1,7 +1,1 @@
 export * from './alert-message/alert-message.component'
-export * from './footer/footer.component'
-export * from './header/header.component'
-export * from './navbar/navbar.component'
-export * from './widget/widget.component'
-export * from './widget-card/widget-card.component'
-export * from './post-card/post-card.component'

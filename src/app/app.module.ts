@@ -1,25 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
 
 import { ComponentModule } from 'app/components/component.module';
 import { CoreModule } from 'app/core/core.module';
-import { PageModule } from 'app/pages/page.module';
 import { ServiceModule } from 'app/services/service.module';
 
 import { AppComponent } from 'app/app.component';
-import { MainComponent } from 'app/main.component';
 import { AppRoutingModule } from 'app/app.routing.module'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MainComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    ComponentModule,
     CoreModule,
-    PageModule,
+    BrowserModule,
+    ComponentModule,    
     ServiceModule.forRoot(),
     AppRoutingModule
   ],

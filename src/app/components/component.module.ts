@@ -11,22 +11,10 @@ import * as Components from 'app/components'
     RouterModule
   ],
   declarations: [
-    Components.AlertMessageComponent,
-    Components.FooterComponent,
-    Components.HeaderComponent,
-    Components.NavBarComponent,
-    Components.WidgetComponent,
-    Components.WidgetCardComponent,
-    Components.PostCardComponent
+    Components.AlertMessageComponent
   ],
   exports: [
-    Components.AlertMessageComponent,
-    Components.FooterComponent,
-    Components.HeaderComponent,
-    Components.NavBarComponent,
-    Components.WidgetComponent,
-    Components.WidgetCardComponent,
-    Components.PostCardComponent
+    Components.AlertMessageComponent
   ]
 })
 export class ComponentModule {}
