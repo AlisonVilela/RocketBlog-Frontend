@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './posts.page.html'
 })
 export class PostsPageComponent {
-  
+
   public posts: Array<any>
 
   constructor() {
