@@ -9,6 +9,9 @@ export class AuthPageComponent {
   public EmailFocus: boolean
   public PasswordFocus: boolean
 
+  public Email: string
+  public Password: string
+
   constructor() {
 
   }

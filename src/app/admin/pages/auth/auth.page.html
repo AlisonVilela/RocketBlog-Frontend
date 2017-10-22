@@ -9,7 +9,7 @@
         <br><br>
         <form id="login-form" method="post">
           <div class="form-group">
-            <label for="login-username" class="label-custom" [ngClass]="{active: EmailFocus || User}">E-mail</label>
+            <label for="login-username" class="label-custom" [ngClass]="{active: EmailFocus || Email}">E-mail</label>
             <input id="login-username" type="text" name="loginUsername" (blur)="setEmailFocus(false)" (focus)="setEmailFocus(true)"
               [(ngModel)]="Email" required>
           </div>
