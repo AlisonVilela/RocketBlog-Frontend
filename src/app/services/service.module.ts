@@ -1,5 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import * as Services from 'app/services'
 
@@ -14,8 +14,10 @@ export class ServiceModule {
     return {
       ngModule: ServiceModule,
       providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: Services.AuthInterceptor, multi: true },
         Services.AlertMessage,
-        Services.TestService
+        Services.AuthService,
+        Services.SessionService              
       ]
     }
   }

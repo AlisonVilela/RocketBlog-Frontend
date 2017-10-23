@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  ApiURL: 'https://blog-rocket-api.herokuapp.com'
+  ApiURL: 'https://rocket-blog-api.herokuapp.com'
 };

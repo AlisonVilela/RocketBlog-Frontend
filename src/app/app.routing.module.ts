@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import * as Guard from 'app/guards'
+
 const appRoutes: Routes = [
   {
-    path: '', children: [
+    path: '', canActivate: [Guard.AppGuard],children: [
       { path: 'blog', loadChildren: 'app/blog/blog.module#BlogModule' },
       { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule' },
       { path: '', redirectTo: 'blog', pathMatch: 'full' },

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
-import { AlertMessage } from 'app/services'
+import { Router } from '@angular/router';
+
+import { SessionService } from 'app/services'
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,11 +10,13 @@ import { AlertMessage } from 'app/services'
 })
 export class NavBarComponent {
 
-  constructor(private alertMessage: AlertMessage) {
+  constructor(private router: Router, private sessionService: SessionService) {
 
   }
 
   logout() {
-    this.alertMessage.addAlert({type: 'warning', message: 'Logout'})
+    this.sessionService.logout().then(data => {
+      this.router.navigate(['/admin', 'auth']);
+    })
   }
 }

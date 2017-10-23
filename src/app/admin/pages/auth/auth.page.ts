@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+import { Router } from '@angular/router';
+
+import { SessionService } from 'app/services'
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.page.html'
@@ -12,7 +16,7 @@ export class AuthPageComponent {
   public Email: string
   public Password: string
 
-  constructor() {
+  constructor(private sessionService: SessionService, private router: Router) {
 
   }
 
@@ -22,5 +26,11 @@ export class AuthPageComponent {
 
   setPasswordFocus(focus) {
     this.PasswordFocus = focus
+  }
+  
+  login() {
+    this.sessionService.login({"email": this.Email, "password": this.Password}).then(data =>{
+      this.router.navigate(['/admin']);
+    })
   }
 }

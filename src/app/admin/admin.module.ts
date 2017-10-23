@@ -7,8 +7,6 @@ import { ComponentModule } from './components/component.module'
 
 import { AdminComponent } from './admin.component'
 
-
-
 @NgModule({
   imports: [
     CoreModule,

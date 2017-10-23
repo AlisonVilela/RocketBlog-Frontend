@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  ApiURL: 'https://blog-rocket-api.herokuapp.com'
+  ApiURL: 'https://rocket-blog-api.herokuapp.com'
 };
