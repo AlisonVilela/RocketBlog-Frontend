@@ -9,10 +9,11 @@ import { environment } from 'environments/environment'
 export class AuthService {
 
   constructor(private http: HttpClient) {
+
   }
 
   auth(input): Observable<any> {
     return this.http.post(environment.ApiURL + '/auth', input)
   }
-  
+
 }

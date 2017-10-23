@@ -6,13 +6,13 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from 'environments/environment'
 
 @Injectable()
-export class AuthService {
+export class UserService {
 
   constructor(private http: HttpClient) {
   }
 
-  auth(input): Observable<any> {
-    return this.http.post(environment.ApiURL + '/auth', input)
+  post(input): Observable<any> {
+    return this.http.post(environment.ApiURL + '/', input)
   }
-  
+
 }

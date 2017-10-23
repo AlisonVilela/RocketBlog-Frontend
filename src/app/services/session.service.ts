@@ -13,15 +13,15 @@ export class SessionService {
 
   public me: any
 
-  constructor(private authService: AuthService, 
+  constructor(private authService: AuthService,
               private auth: Auth,
               private permissionService: PermissionService) {
   }
 
   start(): Promise<boolean> {
-    return new Promise((resolve) => {      
+    return new Promise((resolve) => {
       this.permissionService.clearStore()
-      if (this.isAuthenticated) {        
+      if (this.isAuthenticated) {
         this.permissionService.define(['ADMIN'])
       }
       resolve(true)
@@ -29,7 +29,7 @@ export class SessionService {
   }
 
   login(input): Promise<boolean> {
-    return new Promise((resolve) => {  
+    return new Promise((resolve) => {
     this.authService.auth(input).subscribe(
       data => {
         this.auth.setToken(data['token'])

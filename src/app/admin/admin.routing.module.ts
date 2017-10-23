@@ -11,7 +11,7 @@ const adminRoutes: Routes = [
     { path: 'auth', component: Pages.AuthPageComponent,
       canActivate: [PermissionGuard], data: {
       Permission: {
-        Except: ['ADMIN','MEMBER'],
+        Except: ['ADMIN', 'MEMBER'],
         RedirectTo: '/admin/dashboard'
       } as IPermissionGuardModel
     }},
@@ -23,7 +23,7 @@ const adminRoutes: Routes = [
 
     ], canActivate: [PermissionGuard], data: {
       Permission: {
-        Only: ['ADMIN','MEMBER'],
+        Only: ['ADMIN', 'MEMBER'],
         RedirectTo: '/admin/auth'
       } as IPermissionGuardModel
     }},

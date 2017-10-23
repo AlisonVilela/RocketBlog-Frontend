@@ -9,7 +9,7 @@ import {environment} from 'environments/environment'
 import { PermissionService } from 'angular2-permission'
 
 export class AuthConfig extends CustomConfig {
-  defaultHeaders = {'Content-Type': 'application/json'}  
+  defaultHeaders = {'Content-Type': 'application/json'}
   tokenName = 'accessToken'
   tokenPrefix = ''
   baseUrl = environment.ApiURL

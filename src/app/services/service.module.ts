@@ -17,7 +17,7 @@ export class ServiceModule {
         { provide: HTTP_INTERCEPTORS, useClass: Services.AuthInterceptor, multi: true },
         Services.AlertMessage,
         Services.AuthService,
-        Services.SessionService              
+        Services.SessionService
       ]
     }
   }

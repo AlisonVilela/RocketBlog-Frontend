@@ -27,9 +27,9 @@ export class AuthPageComponent {
   setPasswordFocus(focus) {
     this.PasswordFocus = focus
   }
-  
+
   login() {
-    this.sessionService.login({"email": this.Email, "password": this.Password}).then(data =>{
+    this.sessionService.login({email: this.Email, password: this.Password}).then(data => {
       this.router.navigate(['/admin']);
     })
   }

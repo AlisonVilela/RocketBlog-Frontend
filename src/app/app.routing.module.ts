@@ -5,7 +5,7 @@ import * as Guard from 'app/guards'
 
 const appRoutes: Routes = [
   {
-    path: '', canActivate: [Guard.AppGuard],children: [
+    path: '', canActivate: [Guard.AppGuard], children: [
       { path: 'blog', loadChildren: 'app/blog/blog.module#BlogModule' },
       { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule' },
       { path: '', redirectTo: 'blog', pathMatch: 'full' },
