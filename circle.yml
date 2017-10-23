@@ -8,9 +8,9 @@ dependencies:
   override:
     - npm install --silent --loglevel error
 ##Test override
-##test:
-##  override:
-    ##- ./node_modules/@angular/cli/bin/ng lint --type-check
+test:
+  override:
+    - ./node_modules/@angular/cli/bin/ng lint --type-check
     ##- ./node_modules/@angular/cli/bin/ng test --watch=false --progress=false
 ##deployment
 deployment:

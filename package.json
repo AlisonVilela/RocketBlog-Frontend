@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    //"ng": "ng",
+    "ng": "ng",
     "start": "node Server.js",
-    //"build": "ng build",
+    "build": "ng build",
     //"test": "ng test",
     //"lint": "ng lint --type-check",
     "postinstall": "ng build --aot -prod"
