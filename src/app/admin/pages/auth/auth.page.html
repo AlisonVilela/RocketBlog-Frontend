@@ -19,7 +19,7 @@
               [(ngModel)]="Password" required>
           </div>
           <br><br>
-          <button class="btn btn-success" (click)="login()">Login</button>
+          <button class="btn btn-success" (keyup.enter)="login()" (click)="login()">Login</button>
         </form>
       </div>
     </div>

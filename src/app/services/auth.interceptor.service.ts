@@ -3,18 +3,20 @@ import {
   HttpInterceptor,
   HttpRequest,
   HttpHandler,
+  HttpErrorResponse,
   HttpEvent
 } from '@angular/common/http'
 
 import { Observable } from 'rxjs/Observable'
-import { SessionService } from 'app/services'
+import { SessionService, AlertMessage } from 'app/services'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
   private sessionService: SessionService
 
-  constructor(private injector: Injector) {
+  constructor(private injector: Injector,
+              private alertMessage: AlertMessage) {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -28,6 +30,12 @@ export class AuthInterceptor implements HttpInterceptor {
       })
     }
 
-    return next.handle(req)
+    return next.handle(req).do(event => { }, 
+      err => {
+        if (err instanceof HttpErrorResponse) {
+          this.alertMessage.addAlert({ type: 'danger', message: err.error.message || err.error })
+        }
+      }
+    );
   }
 }

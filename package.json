@@ -32,6 +32,7 @@
     "jquery": "^3.2.1",
     "ng2-gravatar-directive": "^2.0.1",
     "ng2-ui-auth": "^7.0.2",
+    "ngx-order-pipe": "^1.0.3",
     "popper.js": "^1.12.5",
     "rxjs": "^5.1.0",
     "scrollpos-styler": "^0.7.0",

@@ -13,6 +13,7 @@ export class AlertMessage {
 
   addAlert(alert: IAlertMessage) {
     this.alerts.push(alert);
+    setTimeout(() => this.CloseAlert(alert), 4200);
   }
 
   CloseAlert(alert: IAlertMessage) {

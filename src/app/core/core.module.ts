@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms'
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { CustomConfig, Ng2UiAuthModule } from 'ng2-ui-auth'
-
-import {environment} from 'environments/environment'
+import { GravatarModule } from 'ng2-gravatar-directive';
+import { OrderModule } from 'ngx-order-pipe';
+import { environment } from 'environments/environment'
 import { PermissionService } from 'angular2-permission'
 
 export class AuthConfig extends CustomConfig {
@@ -20,10 +21,9 @@ export class AuthConfig extends CustomConfig {
     FormsModule,
     NgbModule.forRoot(),
     CommonModule,
-    Ng2UiAuthModule.forRoot(AuthConfig)
-  ],
-  declarations: [
-
+    Ng2UiAuthModule.forRoot(AuthConfig),
+    GravatarModule,
+    OrderModule
   ],
   providers: [
     PermissionService
@@ -32,7 +32,9 @@ export class AuthConfig extends CustomConfig {
     FormsModule,
     NgbModule,
     CommonModule,
-    Ng2UiAuthModule
+    Ng2UiAuthModule,
+    GravatarModule,
+    OrderModule
   ]
 })
 export class CoreModule {}

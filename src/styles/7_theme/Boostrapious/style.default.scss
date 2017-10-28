@@ -58,14 +58,14 @@ a {
     border-radius: 2px !important;
   }
   
-  .badge {
+  /*.badge {
     font-weight: 400;
     border-radius: 0;
   }
   
   .badge.badge-primary {
     background: #33b35a;
-  }
+  }*/
   
   .page {
     position: absolute;
@@ -282,11 +282,11 @@ a {
     position: relative;
   }
   
-  nav.navbarAdmin .badge {
+  /*nav.navbarAdmin .badge {
     position: absolute;
     top: 0;
     right: 0;
-  }
+  }*/
   
   nav.navbarAdmin a.logout i {
     margin-left: 5px;
@@ -414,7 +414,7 @@ a {
     background: #393836;
     color: #fff;
     transition: all 0.3s linear;
-    z-index: 999;
+    @include z-index('nav-bar');
     overflow-y: auto;
     /* arrow rotation -------------- */
     /*  Side navbarAdmin small ------------------------ */
@@ -489,7 +489,7 @@ a {
     padding: 12px;
   }
   
-  nav.side-navbarAdmin a:focus, nav.side-navbarAdmin a:hover, nav.side-navbarAdmin a[aria-expanded="true"] {
+  nav.side-navbarAdmin a:focus, nav.side-navbarAdmin a:hover, nav.side-navbarAdmin a[aria-expanded="true"], nav.side-navbarAdmin a.active {
     background: #33b35a;
     color: #fff;
     border-radius: 2px;
@@ -518,10 +518,10 @@ a {
     margin-right: 10px;
   }
   
-  nav.side-navbarAdmin .badge {
+  /*nav.side-navbarAdmin .badge {
     display: inline-block;
     font-size: 0.6em;
-  }
+  }*/
   
   nav.side-navbarAdmin .arrow {
     display: block;
@@ -565,9 +565,9 @@ a {
     transform: none !important;
   }
   
-  nav.side-navbarAdmin.shrink .badge {
+  /*nav.side-navbarAdmin.shrink .badge {
     display: none;
-  }
+  }*/
   
   nav.side-navbarAdmin.shrink span {
     font-size: 0.6em;
@@ -610,9 +610,9 @@ a {
       float: none;
       transform: none !important;
     }
-    nav.side-navbarAdmin .badge {
+    /*nav.side-navbarAdmin .badge {
       display: none;
-    }
+    }*/
     nav.side-navbarAdmin span {
       font-size: 0.65em;
       display: block;
@@ -999,9 +999,9 @@ a {
     height: 100%;
   }
   
-  section.updates .daily-feeds .badge {
+  /*section.updates .daily-feeds .badge {
     margin-right: 10px;
-  }
+  }*/
   
   section.updates .daily-feeds strong {
     display: inline-block;
@@ -1311,10 +1311,10 @@ a {
     font-size: 0.8em;
   }
   
-  section.forms small, section.forms span {
+  /*section.forms small, section.forms span {
     font-size: 0.65em;
     color: #999;
-  }
+  }*/
   
   section.forms label span, section.forms label small {
     font-size: 0.8em;
@@ -1378,10 +1378,10 @@ a {
     section.forms label {
       font-size: 0.9em;
     }
-    section.forms small, section.forms span {
+    /*section.forms small, section.forms span {
       font-size: 0.8em;
       color: #999;
-    }
+    }*/
     section.forms label span, section.forms label small {
       font-size: 0.9em;
     }

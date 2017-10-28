@@ -10,7 +10,7 @@ import { SessionService } from 'app/services'
 })
 export class NavBarComponent {
 
-  constructor(private router: Router, private sessionService: SessionService) {
+  constructor(private router: Router, public sessionService: SessionService) {
 
   }
 

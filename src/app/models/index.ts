@@ -1,2 +1,3 @@
 export * from './alert.message'
-export * from './post.teste'
+export * from './post'
+export * from './user'

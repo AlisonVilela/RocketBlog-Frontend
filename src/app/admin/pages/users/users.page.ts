@@ -1,31 +1,98 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+
+import { UserService, ModalsService } from 'app/services'
+
+import { UserPopupPage } from 'app/modals'
+
+import { IUser, IUserCreate, IUserUpdate } from 'app/models'
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.page.html'
 })
-export class UsersPageComponent {
+export class UsersPageComponent implements OnInit {
 
-  constructor() {
+  public users: Array<IUser> = []
+
+  public order: string = 'date';
+  public reverse: boolean = false;
+
+  constructor(private userService: UserService, 
+              private modalsService: ModalsService) {
+  }
+
+  ngOnInit() {
+    this.get()
   }
 
   get() {
+    this.userService.getAll().subscribe(
+      data => {
+        this.users = data
+      },
+      error => {
 
+      }
+    )
   }
 
   create() {
-
+    this.modalsService.openForm(
+      UserPopupPage,
+      {
+        user: <IUserCreate>{},
+        type: 'create' 
+      },
+      (result) => {
+        this.users.push(result)
+      }
+    )
   }
 
-  reset() {
+  edit(user) {
+    this.modalsService.openForm(
+      UserPopupPage,
+      {
+        user: JSON.parse(JSON.stringify( user )),
+        type: 'edit' 
+      },
+      (result) => {
+        this.userService.edit(result._id,result).subscribe(
+          data => {
+            this.users[this.users.indexOf(user)] = data
+          },
+          error => {
 
+          }
+        )
+      }
+    )
   }
 
-  edit() {
+  delete(user) {
+    const resolve = {
+      title: 'User delete',
+      message: 'Are you sure?',
+      submit: () => {
+        this.userService.delete(user._id).subscribe(
+          data => {
+            this.users = this.users.filter(u => u !== user)
+          },
+          error => {
 
+          }
+        )
+      }
+    }
+    this.modalsService.openMessage(resolve)
   }
 
-  delete() {
-
+  setOrder(value: string) {
+    if (this.order === value) {
+      this.reverse = !this.reverse
+    } else {
+      this.reverse = false
+      this.order = value
+    }    
   }
 }

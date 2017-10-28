@@ -30,7 +30,8 @@ export class AuthPageComponent {
 
   login() {
     this.sessionService.login({email: this.Email, password: this.Password}).then(data => {
-      this.router.navigate(['/admin']);
+      console.log("aqui")
+      this.router.navigate(['/admin'])
     })
   }
 }

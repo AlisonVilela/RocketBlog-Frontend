@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h3 class="modal-title">User</h3>
+</div>
+<div class="modal-body">
+  <form #form="ngForm" (submit)="submit()">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="email" [(ngModel)]="user.name" name="name" placeholder="Name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="email" [(ngModel)]="user.email" name="email" placeholder="E-mail Address" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Admin</label>
+      <input type="checkbox" [(ngModel)]="user.role" name="role" [checked]="admin">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="passwordA" name="passwordA" placeholder="New password" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" [(ngModel)]="passwordB" name="passwordB" placeholder="Confirm new password" class="form-control">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" (click)="cancel()">Cancel</button>
+        <button class="btn btn-success" type="submit">Ok</button>
+      </div>
+  </form>
+</div>

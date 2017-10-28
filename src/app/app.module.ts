@@ -5,7 +5,7 @@ import { ComponentModule } from 'app/components/component.module';
 import { CoreModule } from 'app/core/core.module';
 import { ServiceModule } from 'app/services/service.module';
 import { Ng2Permission } from 'angular2-permission';
-
+import { ModalsModule } from 'app/modals/modals.module'
 import * as Guards from 'app/guards'
 
 import { AppComponent } from 'app/app.component';
@@ -21,7 +21,8 @@ import { AppRoutingModule } from 'app/app.routing.module'
     ComponentModule,
     ServiceModule.forRoot(),
     AppRoutingModule,
-    Ng2Permission
+    Ng2Permission,
+    ModalsModule
   ],
   providers: [
     Guards.AppGuard

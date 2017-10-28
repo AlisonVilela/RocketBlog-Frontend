@@ -3,13 +3,13 @@
 
 <!-- Author -->
 <p class="lead">
-  by {{ post.createBy }}
+  by {{ post.author }}
 </p>
 
 <hr>
 
 <!-- Date/Time -->
-<p>Posted on {{ post.dateTime }}</p>
+<p>Posted on {{ post.date }}</p>
 
 <!-- Preview Image -->
 <img class="img-fluid rounded" [src]="'data:image/jpg;base64,'+post.img">
@@ -17,4 +17,4 @@
 <!-- Post Content -->
 <div [innerHTML]="post.content"></div>
 
-<a [routerLink]="['/blog']" class="btn btn-secondary">&larr; Back</a>
+<a [routerLink]="['/blog']" class="btn btn-success mb-4">&larr; Back</a>

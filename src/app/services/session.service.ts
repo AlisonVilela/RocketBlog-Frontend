@@ -1,20 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs/Rx'
 
 import { environment } from 'environments/environment'
 
 import { PermissionService } from 'angular2-permission'
 
-import { AuthService as Auth } from 'ng2-ui-auth';
-import { AuthService } from 'app/services';
+import { AuthService as Auth } from 'ng2-ui-auth'
+import { AuthService } from 'app/services'
+
+import { IUser } from 'app/models'
 
 @Injectable()
 export class SessionService {
 
-  public me: any
+  public me: IUser = <IUser>{}
 
   constructor(private authService: AuthService,
-              private auth: Auth,
+              public auth: Auth,
               private permissionService: PermissionService) {
   }
 
@@ -22,9 +24,19 @@ export class SessionService {
     return new Promise((resolve) => {
       this.permissionService.clearStore()
       if (this.isAuthenticated) {
-        this.permissionService.define(['ADMIN'])
-      }
-      resolve(true)
+        this.authService.getMe().subscribe(
+          data => {
+            this.me = data
+            this.permissionService.define([this.me.role || 'member'])
+            resolve(true)
+          },
+          error => {
+            resolve(false)
+          }
+        )        
+      } else {
+        resolve(true)
+      }      
     })
   }
 
@@ -33,8 +45,11 @@ export class SessionService {
     this.authService.auth(input).subscribe(
       data => {
         this.auth.setToken(data['token'])
-        this.onLogin()
-        resolve(true)
+        this.onLogin().then(
+          data => {
+            resolve(data)
+          }
+        )        
       },
       error => {
         resolve(false)
@@ -55,8 +70,8 @@ export class SessionService {
     })
   }
 
-  onLogin() {
-    this.start()
+  onLogin(): Promise<boolean> {
+    return this.start()
   }
 
   onLogout() {

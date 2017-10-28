@@ -38,9 +38,9 @@ export class PostsPageComponent {
         '0fMjcLfaKGLpKER7/DiVztnq6Ev6ypXUIqtD/87R80MR1vhUTyGlvMgtWEnvVMQMJnuEQCXlz2nQ/+zKSry+sZhvGB7xP8Cgby1o0SSd4+d33qfmg+TINX8w65a2e4ue' +
         '7stge21tfg8HKn7eITuceqmiU9oR36zbaXaG6BjDXrhrvY+ZdvtPVL/P9phmvXrTdepV1JDxaXtfhw9OnyTcLm+fF9p/v2vHPXqhXfxkdHu/J315vu95Uf6l8AAAAAAA' +
         'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCfwKxOEI72AEOwTAAAAAElFTkSuQmCC',
-        contentAbstract: '<p>Teste content</p>',
+        resumeContent: '<p>Teste content</p>',
         date: '21-10-2017',
-        createBy: 'Thor'
+        author: 'Thor'
       }
     ]
   }

@@ -11,10 +11,15 @@ import * as Components from 'app/components'
     RouterModule
   ],
   declarations: [
-    Components.AlertMessageComponent
+    Components.AlertMessageComponent,
+    Components.MessagePopupComponent
+  ],
+  entryComponents: [
+    Components.MessagePopupComponent
   ],
   exports: [
-    Components.AlertMessageComponent
+    Components.AlertMessageComponent,
+    Components.MessagePopupComponent
   ]
 })
 export class ComponentModule {}
