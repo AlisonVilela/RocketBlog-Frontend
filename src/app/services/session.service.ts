@@ -41,7 +41,6 @@ export class SessionService {
   }
 
   login(input): Promise<boolean> {
-    console.log("Login")
     return new Promise((resolve) => {
     this.authService.auth(input).subscribe(
       data => {

@@ -19,6 +19,7 @@ export class ServiceModule {
         Services.AuthService,
         Services.SessionService,
         Services.UserService,
+        Services.PostService,
         Services.ModalsService
       ]
     }

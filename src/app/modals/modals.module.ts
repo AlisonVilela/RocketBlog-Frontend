@@ -10,15 +10,18 @@ import * as Modals from 'app/modals'
   ],
   declarations: [
     Modals.UserProfilePopupPage,
-    Modals.UserPopupPage
+    Modals.UserPopupPage,
+    Modals.PostPopupPage
   ],
   entryComponents: [
     Modals.UserProfilePopupPage,
-    Modals.UserPopupPage
+    Modals.UserPopupPage,
+    Modals.PostPopupPage
   ],
   exports: [
     Modals.UserProfilePopupPage,
-    Modals.UserPopupPage
+    Modals.UserPopupPage,
+    Modals.PostPopupPage
   ]
 })
 export class ModalsModule { }
