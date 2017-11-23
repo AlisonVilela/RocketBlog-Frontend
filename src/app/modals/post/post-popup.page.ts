@@ -62,7 +62,6 @@ export class PostPopupPage {
   
     myReader.onloadend = (e) => {
       this.post.img = myReader.result;
-      console.log(this.post.img)
     }
     myReader.readAsDataURL(file);
   }

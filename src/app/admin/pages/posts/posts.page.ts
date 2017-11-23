@@ -46,7 +46,6 @@ export class PostsPageComponent implements OnInit {
       (result) => {
         this.postService.create(result).subscribe(
           data => {
-            console.log(data)
             this.posts.push(data.object)
           },
           error => {

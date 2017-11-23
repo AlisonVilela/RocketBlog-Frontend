@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router';
 
 import { CoreModule } from 'app/core/core.module'
+import { FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import * as Components from 'app/blog/components'
 
 @NgModule({
   imports: [
     CoreModule,
-    RouterModule
+    RouterModule,
+    FroalaViewModule
   ],
   declarations: [
     Components.FooterComponent,

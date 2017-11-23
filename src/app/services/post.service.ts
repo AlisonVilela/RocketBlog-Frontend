@@ -11,6 +11,14 @@ export class PostService {
   constructor(private http: HttpClient) {
   }
 
+  blogGetAll(): Observable<any> {
+    return this.http.get(environment.ApiURL + '/blog/post')
+  }
+
+  blogGet(id: string): Observable<any> {
+    return this.http.get(environment.ApiURL + `/blog/post/${id}`)
+  }
+
   getAll(): Observable<any> {
     return this.http.get(environment.ApiURL + '/admin/post')
   }

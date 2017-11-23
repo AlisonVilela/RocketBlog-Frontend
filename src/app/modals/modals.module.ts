@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core'
 
 import { CoreModule } from 'app/core/core.module'
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { FroalaEditorModule } from 'angular-froala-wysiwyg';
 
 import * as Modals from 'app/modals'
 
 @NgModule({
   imports: [
     CoreModule,
-    FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot()
+    FroalaEditorModule.forRoot()
   ],
   declarations: [
     Modals.UserProfilePopupPage,
