@@ -41,26 +41,6 @@
   opacity: 0.5;
 }
 
-#froalaEditor {
-  min-height: 150px;
-  overflow: auto;
-  padding: 1em;
-  margin-top: 20px;
-  resize: vertical;
-  outline: none;
-  font-family: 'Roboto';
-  font-size: 14px;
-  border: none;
-
-  .blueText {
-      color: blue;
-  }
-
-  .greenText {
-      color: green;
-  }
-}
-
 /*
 
 Settings:   Global variables, config switches.
