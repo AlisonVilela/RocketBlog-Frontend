@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
 import { PostService, ModalsService } from 'app/services'
 
@@ -10,7 +10,7 @@ import { IPost, IPostCreate } from 'app/models'
   selector: 'app-posts',
   templateUrl: './posts.page.html'
 })
-export class PostsPageComponent {
+export class PostsPageComponent implements OnInit {
 
   public posts: Array<IPost> = []
 
@@ -21,10 +21,14 @@ export class PostsPageComponent {
               private modalsService: ModalsService) {
   }
 
+  ngOnInit() {
+    this.get()
+  }
+
   get() {
     this.postService.getAll().subscribe(
       data => {
-        this.posts = data.posts
+        this.posts = data
       },
       error => {
 
@@ -36,18 +40,22 @@ export class PostsPageComponent {
     this.modalsService.openForm(
       PostPopupPage,
       {
-        user: <IPostCreate>{},
+        post: <IPostCreate>{},
         type: 'create' 
       },
       (result) => {
         this.postService.create(result).subscribe(
           data => {
-            this.posts.push(data.post)
+            console.log(data)
+            this.posts.push(data.object)
           },
           error => {
 
           }
         )
+      },
+      {
+        size: 'lg'
       }
     )
   }
@@ -56,7 +64,7 @@ export class PostsPageComponent {
     this.modalsService.openForm(
       PostPopupPage,
       {
-        user: JSON.parse(JSON.stringify( post )),
+        post: JSON.parse(JSON.stringify( post )),
         type: 'edit' 
       },
       (result) => {
@@ -68,6 +76,9 @@ export class PostsPageComponent {
 
           }
         )
+      },
+      {
+        size: 'lg'
       }
     )
   }

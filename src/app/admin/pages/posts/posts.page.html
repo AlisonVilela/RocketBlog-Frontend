@@ -26,11 +26,6 @@
                   <span [hidden]="reverse">▼</span>
                   <span [hidden]="!reverse">▲</span>
                 </th>
-                <th [class.active]="order === 'resumeContent'" (click)="setOrder('resumeContent')" class="cursor mdl-data-table__cell--non-numeric">
-                  Resume
-                  <span [hidden]="reverse">▼</span>
-                  <span [hidden]="!reverse">▲</span>
-                </th>
                 <th [class.active]="order === 'category'" (click)="setOrder('category')" class="cursor mdl-data-table__cell--non-numeric">
                   Category
                   <span [hidden]="reverse">▼</span>
@@ -48,14 +43,13 @@
               <tr *ngFor="let post of posts | orderBy: order:reverse ">
                 <td>{{ post.date | date }}</td>
                 <td>{{ post.title }}</td>
-                <td>{{ post.resumeContent }}</td>
                 <td><span class="badge badge-info">{{ post.category }}</span></td>
                 <td>{{ post.author }}</td>
                 <td>
-                  <button class="btn btn-sm btn-icon btn-secondary" (click)="edit()" type="button">
+                  <button class="btn btn-sm btn-icon btn-secondary" (click)="edit(post)" type="button">
                     <i class="fa fa-pencil"></i>
                   </button>
-                  <button class="btn btn-sm btn-icon btn-danger" (click)="delete()" type="button">
+                  <button class="btn btn-sm btn-icon btn-danger" (click)="delete(post)" type="button">
                     <i class="fa fa-trash"></i>
                   </button>
                 </td>

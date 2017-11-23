@@ -7,6 +7,60 @@
 @import "7_theme/theme";
 @import "8_trumps/trumps";
 
+.image-upload {
+  position: relative;
+}
+
+.image-upload span {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 45%;
+  visibility: hidden;
+  font-weight: bold;
+}
+  
+.image-upload:hover span {
+  visibility: visible;
+}
+
+.image-upload > input
+{
+  display: none;
+}
+
+.image-upload img
+{
+  width: 300px;
+  height: 160px;
+  cursor: pointer;
+}
+
+.image-upload:hover img
+{
+  opacity: 0.5;
+}
+
+#froalaEditor {
+  min-height: 150px;
+  overflow: auto;
+  padding: 1em;
+  margin-top: 20px;
+  resize: vertical;
+  outline: none;
+  font-family: 'Roboto';
+  font-size: 14px;
+  border: none;
+
+  .blueText {
+      color: blue;
+  }
+
+  .greenText {
+      color: green;
+  }
+}
+
 /*
 
 Settings:   Global variables, config switches.

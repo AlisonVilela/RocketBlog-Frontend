@@ -29,8 +29,8 @@ export class ModalsService {
     );
   }
 
-  openForm(popupForm, data, callBack) {
-    let form = this.open(popupForm)
+  openForm(popupForm, data, callBack, options?) {
+    let form = this.open(popupForm, options)
     form.componentInstance.data = data
     form.result.then((result) => {
       if (callBack) callBack(result)

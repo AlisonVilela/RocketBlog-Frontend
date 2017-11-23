@@ -5,7 +5,6 @@ import { AdminRoutingModule } from './admin.routing.module'
 import { PageModule } from './pages/page.module'
 import { ComponentModule } from './components/component.module'
 
-
 import { AdminComponent } from './admin.component'
 
 @NgModule({

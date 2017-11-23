@@ -19,15 +19,18 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/font-awesome/scss/font-awesome.scss",
         "../node_modules/bootstrap/scss/bootstrap.scss",
+        "../node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+        "../node_modules/froala-editor/css/froala_style.min.css",
+        "../node_modules/font-awesome/scss/font-awesome.scss",        
         "styles/styles.scss"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.slim.min.js",
+        "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/popper.js/dist/umd/popper.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/scrollpos-styler/scrollPosStyler.js"
+        "../node_modules/scrollpos-styler/scrollPosStyler.js",
+        "../node_modules/froala-editor/js/froala_editor.pkgd.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
