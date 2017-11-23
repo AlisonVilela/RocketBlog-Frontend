@@ -2,6 +2,9 @@
   "name": "rocket-blog",
   "version": "0.0.1",
   "license": "MIT",
+  "engines": {
+    "node": "7.10.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node Server.js",
