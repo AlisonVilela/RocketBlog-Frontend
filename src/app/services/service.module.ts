@@ -3,6 +3,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import * as Services from 'app/services'
 
+import { AuthInterceptor } from 'app/services/auth.interceptor.service'
+
 
 @NgModule({
   imports: [
@@ -14,7 +16,7 @@ export class ServiceModule {
     return {
       ngModule: ServiceModule,
       providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: Services.AuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         Services.AlertMessage,
         Services.AuthService,
         Services.SessionService,

@@ -6,7 +6,7 @@ import { environment } from 'environments/environment'
 import { PermissionService } from 'angular2-permission'
 
 import { AuthService as Auth } from 'ng2-ui-auth'
-import { AuthService } from 'app/services'
+import { AuthService } from 'app/services/auth.service'
 
 import { IUser } from 'app/models'
 
