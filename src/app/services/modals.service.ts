@@ -31,7 +31,7 @@ export class ModalsService {
 
   openForm(popupForm, data, callBack) {
     let form = this.open(popupForm)
-    form.componentInstance.setData = data
+    form.componentInstance.data = data
     form.result.then((result) => {
       if (callBack) callBack(result)
     }, (reason) => {

@@ -21,11 +21,14 @@ export class ProfilePageComponent {
     this.modalsService.openForm(
       UserProfilePopupPage,
       {
+        _id: this.sessionService.me._id,
         name: this.sessionService.me.name,
         email: this.sessionService.me.email
       },
       (result) => {
-        this.sessionService.auth.setToken(result.token)
+        if (result.token) {
+          this.sessionService.auth.setToken(result.token)
+        }
         this.sessionService.start()
       }
     )

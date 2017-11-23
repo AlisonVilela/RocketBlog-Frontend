@@ -31,7 +31,8 @@
               <td>Role</td>
               <td>
                   <span *ngIf="sessionService.me.role == 'admin'" class="badge badge-success">Admin</span>
-                  <span *ngIf="sessionService.me.role == 'member' || !sessionService.me.role" class="badge badge-info">Member</span>
+                  <span *ngIf="sessionService.me.role == 'member'" class="badge badge-info">Member</span>
+                  <span *ngIf="sessionService.me.role == 'superadmin'" class="badge badge-danger">Super Admin</span>
               </td>
             </tr>
           </table>          

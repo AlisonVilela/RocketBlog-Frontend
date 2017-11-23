@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import { UserService, ModalsService } from 'app/services'
+import { UserService, SessionService, ModalsService } from 'app/services'
 
 import { UserPopupPage } from 'app/modals'
 
@@ -17,7 +17,8 @@ export class UsersPageComponent implements OnInit {
   public order: string = 'date';
   public reverse: boolean = false;
 
-  constructor(private userService: UserService, 
+  constructor(private userService: UserService,
+              public sessionService: SessionService,
               private modalsService: ModalsService) {
   }
 
@@ -28,7 +29,7 @@ export class UsersPageComponent implements OnInit {
   get() {
     this.userService.getAll().subscribe(
       data => {
-        this.users = data
+        this.users = data.users
       },
       error => {
 
@@ -44,7 +45,14 @@ export class UsersPageComponent implements OnInit {
         type: 'create' 
       },
       (result) => {
-        this.users.push(result)
+        this.userService.create(result).subscribe(
+          data => {
+            this.users.push(data.user)
+          },
+          error => {
+
+          }
+        )
       }
     )
   }

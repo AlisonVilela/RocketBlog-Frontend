@@ -9,10 +9,18 @@ import { IUserCreate, IUserUpdate } from 'app/models'
 })
 export class UserPopupPage {
 
+  public admin: boolean
+
   @Input()
-  set setData(data){
+  set data(data){
     this.user = data.user
     this.type = data.type
+
+    if (this.user.role == 'admin') {
+      this.admin = true
+    } else {
+      this.admin = false
+    }
   }
 
   public passwordA: string
@@ -25,6 +33,11 @@ export class UserPopupPage {
   }
 
   submit = () => {
+    if (this.admin) {
+      this.user.role = 'admin'
+    } else {
+      this.user.role = 'member'
+    }
     if (this.passwordA === this.passwordB) {
       this.user.password = this.passwordA
     }    
