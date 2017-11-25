@@ -21,10 +21,10 @@ export class ModalsService {
  
     message.result.then(
       result => {
-        if (resolve.submit) resolve.submit()
+        if (resolve.submit) resolve.submit(true)
       },
       reason => {
-
+        if (resolve.submit) resolve.submit(false)
       }
     );
   }
@@ -35,7 +35,7 @@ export class ModalsService {
     form.result.then((result) => {
       if (callBack) callBack(result)
     }, (reason) => {
-
+      if (callBack) callBack(false)
     });
   }
 }

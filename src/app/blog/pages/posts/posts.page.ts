@@ -21,7 +21,7 @@ export class PostsPageComponent implements OnInit {
   get() {
     this.postService.blogGetAll().subscribe(
       data => {
-        this.posts = data
+        this.posts = data.posts
       },
       error => {
 

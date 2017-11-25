@@ -14,8 +14,9 @@ export class PostsPageComponent implements OnInit {
 
   public posts: Array<IPost> = []
 
-  public order: string = 'date';
-  public reverse: boolean = false;
+  public order: string = 'date'
+  public reverse: boolean = false
+  public loading: boolean = false
 
   constructor(private postService: PostService,
               private modalsService: ModalsService) {
@@ -28,7 +29,7 @@ export class PostsPageComponent implements OnInit {
   get() {
     this.postService.getAll().subscribe(
       data => {
-        this.posts = data
+        this.posts = data.posts
       },
       error => {
 
@@ -37,21 +38,27 @@ export class PostsPageComponent implements OnInit {
   }
 
   create() {
+    this.loading = true
     this.modalsService.openForm(
       PostPopupPage,
       {
         post: <IPostCreate>{},
         type: 'create' 
       },
-      (result) => {
-        this.postService.create(result).subscribe(
-          data => {
-            this.posts.push(data.object)
-          },
-          error => {
-
-          }
-        )
+      result => {
+        if (result) {
+          this.postService.create(result).subscribe(
+            data => {
+              this.loading = false
+              this.posts.push(data.post)
+            },
+            error => {
+              this.loading = false
+            }
+          )
+        } else {
+          this.loading = false
+        }
       },
       {
         size: 'lg'
@@ -60,6 +67,7 @@ export class PostsPageComponent implements OnInit {
   }
 
   edit(post) {
+    this.loading = true
     this.modalsService.openForm(
       PostPopupPage,
       {
@@ -67,14 +75,19 @@ export class PostsPageComponent implements OnInit {
         type: 'edit' 
       },
       (result) => {
-        this.postService.edit(result._id,result).subscribe(
-          data => {
-            this.posts[this.posts.indexOf(post)] = data
-          },
-          error => {
-
-          }
-        )
+        if (result) {
+          this.postService.edit(result._id,result).subscribe(
+            data => {
+              this.loading = false
+              this.posts[this.posts.indexOf(post)] = data.post
+            },
+            error => {
+              this.loading = false
+            }
+          )
+        } else {
+          this.loading = false
+        }
       },
       {
         size: 'lg'
@@ -83,18 +96,24 @@ export class PostsPageComponent implements OnInit {
   }
 
   delete(post) {
+    this.loading = true
     const resolve = {
       title: 'User delete',
       message: 'Are you sure?',
-      submit: () => {
-        this.postService.delete(post._id).subscribe(
-          data => {
-            this.posts = this.posts.filter(u => u !== post)
-          },
-          error => {
-
-          }
-        )
+      submit: (result) => {
+        if (result) {
+          this.postService.delete(post._id).subscribe(
+            data => {
+              this.posts = this.posts.filter(u => u !== post)
+              this.loading = false
+            },
+            error => {
+              this.loading = false
+            }
+          )
+        } else {
+          this.loading = false
+        }
       }
     }
     this.modalsService.openMessage(resolve)

@@ -14,8 +14,9 @@ export class UsersPageComponent implements OnInit {
 
   public users: Array<IUser> = []
 
-  public order: string = 'date';
-  public reverse: boolean = false;
+  public order: string = 'date'
+  public reverse: boolean = false
+  public loading: boolean = false
 
   constructor(private userService: UserService,
               public sessionService: SessionService,
@@ -38,6 +39,7 @@ export class UsersPageComponent implements OnInit {
   }
 
   create() {
+    this.loading = true
     this.modalsService.openForm(
       UserPopupPage,
       {
@@ -45,19 +47,25 @@ export class UsersPageComponent implements OnInit {
         type: 'create' 
       },
       (result) => {
-        this.userService.create(result).subscribe(
-          data => {
-            this.users.push(data.user)
-          },
-          error => {
-
-          }
-        )
+        if (result) {
+          this.userService.create(result).subscribe(
+            data => {
+              this.loading = false
+              this.users.push(data.user)
+            },
+            error => {
+              this.loading = false
+            }
+          )
+        } else {
+          this.loading = false
+        }
       }
     )
   }
 
   edit(user) {
+    this.loading = true
     this.modalsService.openForm(
       UserPopupPage,
       {
@@ -65,31 +73,42 @@ export class UsersPageComponent implements OnInit {
         type: 'edit' 
       },
       (result) => {
-        this.userService.edit(result._id,result).subscribe(
-          data => {
-            this.users[this.users.indexOf(user)] = data
-          },
-          error => {
-
-          }
-        )
+        if (result) {
+          this.userService.edit(result._id,result).subscribe(
+            data => {
+              this.loading = false
+              this.users[this.users.indexOf(user)] = data
+            },
+            error => {
+              this.loading = false
+            }
+          )
+        } else {
+          this.loading = false
+        }
       }
     )
   }
 
   delete(user) {
+    this.loading = true
     const resolve = {
       title: 'User delete',
       message: 'Are you sure?',
-      submit: () => {
-        this.userService.delete(user._id).subscribe(
-          data => {
-            this.users = this.users.filter(u => u !== user)
-          },
-          error => {
-
-          }
-        )
+      submit: (result) => {
+        if (result) {
+          this.userService.delete(user._id).subscribe(
+            data => {
+              this.loading = false
+              this.users = this.users.filter(u => u !== user)
+            },
+            error => {
+              this.loading = false
+            }
+          )
+        } else {
+          this.loading = false
+        }
       }
     }
     this.modalsService.openMessage(resolve)
