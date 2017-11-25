@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx'
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 
 
 import { environment } from 'environments/environment'
@@ -11,8 +11,11 @@ export class PostService {
   constructor(private http: HttpClient) {
   }
 
-  blogGetAll(): Observable<any> {
-    return this.http.get(environment.ApiURL + '/blog/post')
+  blogGetAll(page, size): Observable<any> {
+    let params = new HttpParams()
+    params = params.append('page', page)
+    params = params.append('size', size)
+    return this.http.get(environment.ApiURL + '/blog/post', {params: params})
   }
 
   blogGet(id: string): Observable<any> {

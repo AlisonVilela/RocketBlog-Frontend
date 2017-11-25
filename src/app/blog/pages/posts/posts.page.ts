@@ -9,6 +9,8 @@ import { PostService } from 'app/services'
 export class PostsPageComponent implements OnInit {
 
   public posts: Array<any>
+  public currentPage = 0
+  public pageCount = 0
 
   constructor(private postService: PostService) {
     this.posts = []
@@ -19,9 +21,10 @@ export class PostsPageComponent implements OnInit {
   }
 
   get() {
-    this.postService.blogGetAll().subscribe(
+    this.postService.blogGetAll(this.currentPage, 3).subscribe(
       data => {
         this.posts = data.posts
+        this.pageCount = data.pageCount
       },
       error => {
 
@@ -30,11 +33,13 @@ export class PostsPageComponent implements OnInit {
   }
 
   older() {
-
+    this.currentPage++
+    this.get()
   }
 
   newer() {
-
+    this.currentPage--
+    this.get()
   }
 
 }

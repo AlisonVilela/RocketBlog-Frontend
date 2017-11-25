@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { CoreModule } from 'app/core/core.module'
 import { ComponentModule } from '../components/component.module'
+import { ScrollToModule } from 'ng2-scroll-to';
 
 import * as Pages from 'app/blog/pages'
 
@@ -10,7 +11,8 @@ import * as Pages from 'app/blog/pages'
   imports: [
     CoreModule,
     RouterModule,
-    ComponentModule
+    ComponentModule,
+    ScrollToModule.forRoot()
   ],
   declarations: [
     Pages.PostsPageComponent,
