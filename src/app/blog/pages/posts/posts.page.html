@@ -1,4 +1,4 @@
-<section id="test-section">
+<section id="post-section">
   <div *ngFor="let post of posts">
     <app-post-card [post]="post"></app-post-card>
   </div>
@@ -6,9 +6,9 @@
 <!-- Pagination -->
 <ul class="pagination justify-content-center mb-4">
   <li class="page-item" [ngClass]="{'disabled': currentPage >= pageCount - 1}">
-    <a class="page-link" (click)="older()" scrollTo scrollTargetSelector="#test-section" scrollYTarget="432">&larr; Older</a>
+    <a class="page-link" (click)="older()" scrollTo scrollTargetSelector="#post-section" scrollYTarget="432">&larr; Older</a>
   </li>
   <li class="page-item" [ngClass]="{'disabled': currentPage == 0}">
-    <a class="page-link" (click)="newer()" scrollTo scrollTargetSelector="#test-section">Newer &rarr;</a>
+    <a class="page-link" (click)="newer()" scrollTo scrollTargetSelector="#post-section" scrollYTarget="432">Newer &rarr;</a>
   </li>
 </ul>
