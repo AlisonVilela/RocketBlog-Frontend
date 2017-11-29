@@ -11,10 +11,11 @@ export class PostService {
   constructor(private http: HttpClient) {
   }
 
-  blogGetAll(page, size): Observable<any> {
+  blogGetAll(page, size, category): Observable<any> {
     let params = new HttpParams()
     params = params.append('page', page)
     params = params.append('size', size)
+    params = params.append('category', category)
     return this.http.get(environment.ApiURL + '/blog/post', {params: params})
   }
 
