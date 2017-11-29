@@ -7,6 +7,7 @@ import { BlogComponent } from './blog.component'
 const blogRoutes: Routes = [
   { path: '', component: BlogComponent, children: [
     { path: '', component: Pages.PostsPageComponent },
+    { path: ':category', component: Pages.PostsPageComponent },
     { path: 'about', component: Pages.AboutPageComponent },
     { path: 'contact', component: Pages.ContactPageComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }

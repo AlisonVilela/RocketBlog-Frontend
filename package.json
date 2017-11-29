@@ -10,6 +10,7 @@
     "start": "node Server.js",
     "build": "ng build",
     "test": "ng test",
+    "dev": "ng serve",
     "lint": "ng lint --type-check",
     "postinstall": "ng build --aot -prod"
   },
