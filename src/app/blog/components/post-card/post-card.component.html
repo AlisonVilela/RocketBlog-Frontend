@@ -2,10 +2,8 @@
   <img *ngIf="post.img != ''" class="card-img-top" [src]="post.img" (error)="updateUrl()" style="height: 250px;"/>
   <img *ngIf="post.img == ''" src="assets/img/No_Image_Available.jpg" style="height: 250px;"/>
   <div class="card-body">
-    <h2 class="card-title">{{ post.title }}</h2>
+    <h1 class="card-title">{{ post.title }}</h1>
     <div class="card-text" [froalaView]="post.content"></div>
-    <br/>
-    <a [routerLink]="['/blog', 'post', post.titleUrl ]" class="btn btn-success">Read More &rarr;</a>
   </div>
   <div class="card-footer text-muted">
     Posted on {{ post.date | date }} by {{ post.author }}
