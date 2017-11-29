@@ -54,10 +54,10 @@
                   <span *ngIf="user.role == 'superadmin'" class="badge badge-danger">Super Admin</span>
                 </th>
                 <td>
-                  <button *ngIf="user.role != 'superadmin' || user._id !== sessionService.me._id" class="btn btn-sm btn-icon btn-secondary" (click)="edit(user)" type="button">
+                  <button *ngIf="user.role != 'superadmin' && user._id !== sessionService.me._id" class="btn btn-sm btn-icon btn-secondary" (click)="edit(user)" type="button">
                     <i class="fa fa-pencil"></i>
                   </button>
-                  <button *ngIf="user.role != 'superadmin' || user._id !== sessionService.me._id" class="btn btn-sm btn-icon btn-danger" (click)="delete(user)" type="button">
+                  <button *ngIf="user.role != 'superadmin' && user._id !== sessionService.me._id" class="btn btn-sm btn-icon btn-danger" (click)="delete(user)" type="button">
                     <i class="fa fa-trash"></i>
                   </button>
                 </td>

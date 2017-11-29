@@ -1,6 +1,18 @@
 <section id="post-section">
-  <div *ngFor="let post of posts">
-    <app-post-card [post]="post"></app-post-card>
+  <div *ngIf="posts">
+    <div *ngFor="let post of posts">
+      <app-post-card [post]="post"></app-post-card>
+    </div>
+  </div>
+  <div *ngIf="posts.length <= 0">
+    <div class="card text-center">
+      <div class="card-block">
+        <br/>
+        <h4 class="card-title">No posts yet!</h4>
+        <br/>
+      </div>
+    </div>
+    <br/>
   </div>
 </section>
 <!-- Pagination -->

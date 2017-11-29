@@ -16,13 +16,11 @@ import * as Pages from 'app/blog/pages'
   ],
   declarations: [
     Pages.PostsPageComponent,
-    Pages.PostPageComponent,
     Pages.AboutPageComponent,
     Pages.ContactPageComponent
    ],
   exports: [
     Pages.PostsPageComponent,
-    Pages.PostPageComponent,
     Pages.AboutPageComponent,
     Pages.ContactPageComponent
    ]
