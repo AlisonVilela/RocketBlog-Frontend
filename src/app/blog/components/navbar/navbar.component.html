@@ -4,20 +4,31 @@
       <strong class="text-primary">Rocket</strong>
       <span>Blog</span>
     </div>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/blog']">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/blog', 'entrevista']">Entrevista</a>
-          </li>
+          <a class="nav-link" [routerLink]="['/blog', 'coluna']">Coluna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/blog', 'entrevista']">Entrevista</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/blog', 'charge']">Charge</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/blog','about']">Sobre</a>
         </li>
-        <li class="nav-item">
+        <!--li class="nav-item">
           <a class="nav-link" [routerLink]="['/blog','contact']">Contato</a>
-        </li>
+        </li-->
       </ul>
     </div>
   </div>
