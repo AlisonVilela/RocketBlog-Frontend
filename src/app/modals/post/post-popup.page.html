@@ -25,7 +25,18 @@
         </div>
       </div>
       <div class="col-8">
-        <div [froalaEditor]="options" [(froalaModel)]="post.content"></div>
+        <ngb-tabset>
+          <ngb-tab title="Resume Content">
+            <ng-template ngbTabContent>
+                <div [froalaEditor]="options" [(froalaModel)]="post.resumeContent"></div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Content">
+              <ng-template ngbTabContent>
+                  <div [froalaEditor]="options" [(froalaModel)]="post.content"></div>
+              </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
       </div>
     </div>    
     <div class="modal-footer">
