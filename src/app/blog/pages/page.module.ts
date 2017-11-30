@@ -15,11 +15,13 @@ import * as Pages from 'app/blog/pages'
     ScrollToModule.forRoot()
   ],
   declarations: [
+    Pages.PostPageComponent,
     Pages.PostsPageComponent,
     Pages.AboutPageComponent,
     Pages.ContactPageComponent
    ],
   exports: [
+    Pages.PostPageComponent,
     Pages.PostsPageComponent,
     Pages.AboutPageComponent,
     Pages.ContactPageComponent
