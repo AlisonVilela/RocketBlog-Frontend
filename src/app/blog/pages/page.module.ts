@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { CoreModule } from 'app/core/core.module'
 import { ComponentModule } from '../components/component.module'
-import { ScrollToModule } from 'ng2-scroll-to';
+import { FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import * as Pages from 'app/blog/pages'
 
@@ -12,7 +12,7 @@ import * as Pages from 'app/blog/pages'
     CoreModule,
     RouterModule,
     ComponentModule,
-    ScrollToModule.forRoot()
+    FroalaViewModule
   ],
   declarations: [
     Pages.PostPageComponent,

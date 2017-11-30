@@ -11,4 +11,8 @@ export class PostCardComponent {
 
   }
 
+  updateUrl() {
+    this.post.img = ''
+  }
+  
 }

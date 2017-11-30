@@ -8,6 +8,7 @@ import { GravatarModule } from 'ng2-gravatar-directive';
 import { OrderModule } from 'ngx-order-pipe';
 import { environment } from 'environments/environment'
 import { PermissionService } from 'angular2-permission'
+import { ScrollToModule } from 'ng2-scroll-to';
 
 export class AuthConfig extends CustomConfig {
   defaultHeaders = {'Content-Type': 'application/json'}
@@ -23,7 +24,8 @@ export class AuthConfig extends CustomConfig {
     CommonModule,
     Ng2UiAuthModule.forRoot(AuthConfig),
     GravatarModule,
-    OrderModule
+    OrderModule,
+    ScrollToModule.forRoot()
   ],
   providers: [
     PermissionService

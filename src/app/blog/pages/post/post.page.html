@@ -1,2 +1,19 @@
-{{ post }}
-<app-post-card [post]="post"></app-post-card>
+<div class="card mb-4" *ngIf="post">
+  <img *ngIf="post.img != ''" class="card-img-top" [src]="post.img" (error)="updateUrl()" style="height: 250px;" />
+  <img *ngIf="post.img == ''" src="assets/img/No_Image_Available.jpg" style="height: 250px;" />
+  <div class="card-body">
+    <h1 class="card-title">{{ post.title }}</h1>
+    <div class="card-text" [froalaView]="post.content"></div>
+  </div>
+  <div class="card-footer text-muted">
+    Postado em {{ post.date | date }} por {{ post.author }}
+    <div class="badge badge-info" style="
+                right: 20px;
+                bottom: 15px;
+                position: absolute;
+            ">{{ post.category }}</div>
+  </div>
+</div>
+<div *ngIf="!post" class="text-center">
+  <i class="fa fa-spinner fa-pulse fa-5x"></i>
+</div>

@@ -13,7 +13,6 @@ export class PostPageComponent implements OnInit {
   private title
 
   constructor(private postService: PostService, private route: ActivatedRoute) {
-    this.post = {}
   }
 
   ngOnInit() {
@@ -30,5 +29,9 @@ export class PostPageComponent implements OnInit {
 
       }
     )
+  }
+
+  updateUrl() {
+    this.post.img = ''
   }
 }
