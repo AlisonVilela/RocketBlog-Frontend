@@ -13,7 +13,7 @@ export class PostsPageComponent implements OnInit {
   public currentPage = 0
   public pageCount = 0
   private category
-
+  public loading = false
   constructor(private postService: PostService, private route: ActivatedRoute) {
     this.posts = []
   }
@@ -24,13 +24,16 @@ export class PostsPageComponent implements OnInit {
   }
 
   get() {
+    this.posts = []
+    this.loading = true
     this.postService.blogGetAll(this.currentPage, 3, this.category).subscribe(
       data => {
         this.posts = data.posts
         this.pageCount = data.pageCount
+        this.loading = false
       },
       error => {
-
+        this.loading = false
       }
     )
   }

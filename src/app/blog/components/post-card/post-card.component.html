@@ -5,7 +5,7 @@
     <h1 class="card-title">{{ post.title }}</h1>
     <div class="card-text" [froalaView]="post.resumeContent"></div>
     <br/>
-    <a [routerLink]="['/blog', 'post', post.titleUrl ]" scrollTo scrollTargetSelector="#post-section" class="btn btn-success">Leia Mais &rarr;</a>
+    <a [routerLink]="['/blog', 'post', post.titleUrl ]" class="btn btn-success">Leia Mais &rarr;</a>
   </div>
   <div class="card-footer text-muted">
     Postado em {{ post.date | date }} por {{ post.author }}

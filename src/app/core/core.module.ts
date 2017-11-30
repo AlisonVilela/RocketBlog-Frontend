@@ -36,7 +36,8 @@ export class AuthConfig extends CustomConfig {
     CommonModule,
     Ng2UiAuthModule,
     GravatarModule,
-    OrderModule
+    OrderModule,
+    ScrollToModule
   ]
 })
 export class CoreModule {}

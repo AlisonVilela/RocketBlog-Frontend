@@ -7,10 +7,10 @@ import { BlogComponent } from './blog.component'
 const blogRoutes: Routes = [
   { path: '', component: BlogComponent, children: [
     { path: '', component: Pages.PostsPageComponent },
-    { path: 'post/:title', component: Pages.PostPageComponent },
-    { path: ':category', component: Pages.PostsPageComponent },
+    { path: 'post/:title', component: Pages.PostPageComponent },    
     { path: 'about', component: Pages.AboutPageComponent },
     { path: 'contact', component: Pages.ContactPageComponent },
+    { path: ':category', component: Pages.PostsPageComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
   ]}
 ];

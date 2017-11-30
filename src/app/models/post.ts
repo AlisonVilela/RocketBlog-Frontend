@@ -25,9 +25,7 @@ export interface IPostCreate {
   img: string,
   resumeContent: string,
   content: string,
-  category: string,
-  date: Date,
-  author: string
+  category: string
 }
 
 export interface IPostUpdate {
